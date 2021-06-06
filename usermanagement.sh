@@ -132,7 +132,7 @@ spec:
 		fi
 
 		echo "Info: Checking $user-csr condition..."
-       		 chk=$(kubectl get csr $user-csr | awk NR==2'{print $4}')
+       		 chk=$(kubectl get csr $user-csr | awk NR==2'{print $5}')
 		if [[ $chk == "Pending" ]]
 		then
 			echo "Info: $user-csr condition is Pending. Approving it now ..."
