@@ -7,5 +7,15 @@ REQUIREMENTS:
 * You must have jq tool installed. You can install jq by 'snap install jq'
 
 NOTES: You can develop this script to create group rolebinding 
+Defaults Roles:
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+ namespace: $nspace
+ name: $user-role
+rules:
+- apiGroups: [\"\"]
+  resources: [\"pods\", \"services\",\"deployments\"]
+  verbs: [\"create\", \"get\", \"update\", \"list\", \"delete\"]
 
 Good lock
